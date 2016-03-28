@@ -62,7 +62,7 @@ class Root6 < Formula
     # ROOT forbids running CMake in the root of the source directory,
     # so run in a subdirectory (there's already one called `build`)
     mkdir "build_dir" do
-      system "cmake", "..", *std_cmake_args, *args
+      system "cmake", "..", *(std_cmake_args + args)
       system "make", "install"
     end
 
